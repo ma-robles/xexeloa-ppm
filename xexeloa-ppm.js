@@ -1,5 +1,5 @@
 const https = require("https");
-const host = 'ruoa.unam.mx';
+const host = '';
 const port = 8042;
 const fs = require("fs");
 const urlp = require('url');
@@ -45,6 +45,7 @@ const getDays= function(filelist, year_m){
         d = name_sp[ name_sp.length - 1].split('-')[2];
         if (d=== undefined){
             continue;
+        }
 
         newday = year_m+ "-" + d.split('.')[0];
         if (filename.includes('_'+year_m) && !days.includes(newday)){
