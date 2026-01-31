@@ -43,6 +43,9 @@ const getDays= function(filelist, year_m){
     for (filename of filelist){
         name_sp = filename.split('_');
         d = name_sp[ name_sp.length - 1].split('-')[2];
+        if (d=== undefined){
+            continue;
+
         newday = year_m+ "-" + d.split('.')[0];
         if (filename.includes('_'+year_m) && !days.includes(newday)){
             days.push(newday);
